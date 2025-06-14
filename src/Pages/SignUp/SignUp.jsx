@@ -27,24 +27,24 @@ const SignUp = () => {
       .then((result) => {
         console.log(result);
         Navigate("/");
-        // fetch("https://hobby-connect-server.vercel.app/users/", {
-        //   method: "POST",
-        //   headers: {
-        //     "Content-Type": "application/json",
-        //   },
-        //   body: JSON.stringify({ name, email, photo }),
-        // })
-        //   .then((response) => response.json())
-        //   .then((data) => {
-        //     console.log(data);
-        //     if (data.insertedId) {
-        //       Swal.fire({
-        //         title: "Account Created Successfully!",
-        //         icon: "success",
-        //         draggable: true,
-        //       });
-        //     }
-        //   });
+        fetch("http://localhost:3000/users", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ name, email, photo }),
+        })
+          .then((response) => response.json())
+          .then((data) => {
+            console.log(data);
+            if (data.insertedId) {
+              Swal.fire({
+                title: "Account Created Successfully!",
+                icon: "success",
+                draggable: true,
+              });
+            }
+          });
         updateUser({ displayName: name, photoURL: photo })
           .then(() => {
             setUser({ ...user, displayName: name, photoURL: photo });

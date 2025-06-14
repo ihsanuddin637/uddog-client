@@ -10,6 +10,7 @@ import SignUp from "./../Pages/SignUp/SignUp";
 import CreateEvent from "./../Pages/CreateEvent/CreateEvent";
 import ManageEvent from "./../Pages/ManageEvent/ManageEvent";
 import JoinedEvent from "../Pages/JoinedEvent/JoinedEvent";
+import EventDetails from "../Pages/EventDetails/EventDetails";
 
 export const router = createBrowserRouter([
   {
@@ -21,6 +22,13 @@ export const router = createBrowserRouter([
       {
         path: "/upcoming-event",
         Component: UpcomingEvent,
+        loader: () => fetch("http://localhost:3000/event-Data/upcoming"),
+      },
+      {
+        path: "/event-details/:id",
+        Component: EventDetails,
+        loader: ({ params }) =>
+          fetch(`http://localhost:3000/event-Data/${params.id}`),
       },
       {
         path: "/create-event",

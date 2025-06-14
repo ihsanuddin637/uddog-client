@@ -3,10 +3,12 @@ import Swal from "sweetalert2";
 import { AuthContext } from "../../Context/AuthContext";
 import "react-datepicker/dist/react-datepicker.css";
 import DatePicker from "react-datepicker";
+import { useNavigate } from "react-router";
 
 const CreateEvent = () => {
   const [startDate, setStartDate] = useState(new Date());
   <DatePicker selected={startDate} onChange={(date) => setStartDate(date)} />;
+  const navigate = useNavigate();
 
   const { user } = use(AuthContext);
   const handleCreateUsers = (e) => {
@@ -15,7 +17,7 @@ const CreateEvent = () => {
     const formData = new FormData(form);
     const groupData = Object.fromEntries(formData.entries());
     console.log(groupData);
-    fetch("https://hobby-connect-server.vercel.app/groupData", {
+    fetch("http://localhost:3000/event-Data", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -32,6 +34,7 @@ const CreateEvent = () => {
             draggable: true,
           });
           form.reset();
+          navigate("/upcoming-event");
         }
       });
   };
@@ -90,20 +93,21 @@ const CreateEvent = () => {
           <fieldset className="fieldset bg-base-200 border-base-300 rounded-box border p-4">
             <label className="label">Start Date</label>
             <DatePicker
-            className="input w-full outline-2 outline-green-400"
+              className="input w-full outline-2 outline-green-400"
               selected={startDate}
+              name="date"
               onChange={(date) => setStartDate(date)}
             />
           </fieldset>
-           <fieldset className="fieldset bg-base-200 border-base-300 rounded-box border p-4">
-          <label className="label">Thumbnail Image Url</label>
-          <input
-            type="url"
-            className="input w-full outline-2 outline-green-400"
-            name="photo"
-            placeholder="Image Url"
-          />
-        </fieldset>
+          <fieldset className="fieldset bg-base-200 border-base-300 rounded-box border p-4">
+            <label className="label">Thumbnail Image Url</label>
+            <input
+              type="url"
+              className="input w-full outline-2 outline-green-400"
+              name="photo"
+              placeholder="Image Url"
+            />
+          </fieldset>
           <fieldset className="fieldset bg-base-200 border-base-300 rounded-box border p-4">
             <label className="label">Name</label>
             <input
@@ -111,7 +115,7 @@ const CreateEvent = () => {
               className="input w-full outline-2 outline-green-400"
               name="name"
               placeholder="Name"
-                defaultValue={user.displayName}
+              defaultValue={user.displayName}
               readOnly
             />
           </fieldset>
@@ -122,12 +126,12 @@ const CreateEvent = () => {
               className="input w-full outline-2 outline-green-400"
               name="email"
               placeholder="Email"
-                defaultValue={user.email}
+              defaultValue={user.email}
               readOnly
             />
           </fieldset>
         </div>
-       
+
         <input
           type="submit"
           className="btn btn-primary w-full"
