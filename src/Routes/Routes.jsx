@@ -10,7 +10,9 @@ import SignUp from "./../Pages/SignUp/SignUp";
 import CreateEvent from "./../Pages/CreateEvent/CreateEvent";
 import ManageEvent from "./../Pages/ManageEvent/ManageEvent";
 import JoinedEvent from "../Pages/JoinedEvent/JoinedEvent";
+import PrivateRoute from "./PrivateRoutes";
 import EventDetails from "../Pages/EventDetails/EventDetails";
+import UpdateEvent from "../Pages/UpdateEvent/UpdateEvent";
 
 export const router = createBrowserRouter([
   {
@@ -26,21 +28,45 @@ export const router = createBrowserRouter([
       },
       {
         path: "/event-details/:id",
-        Component: EventDetails,
+        element: (
+          <PrivateRoute>
+            <EventDetails></EventDetails>
+          </PrivateRoute>
+        ),
         loader: ({ params }) =>
           fetch(`http://localhost:3000/event-Data/${params.id}`),
       },
       {
         path: "/create-event",
-        Component: CreateEvent,
+        element: (
+          <PrivateRoute>
+            <CreateEvent></CreateEvent>
+          </PrivateRoute>
+        ),
       },
       {
         path: "/manage-event",
-        Component: ManageEvent,
+        element: (
+          <PrivateRoute>
+            <ManageEvent></ManageEvent>
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: "/update-event/:id",
+        element: (
+          <PrivateRoute>
+            <UpdateEvent></UpdateEvent>
+          </PrivateRoute>
+        ),
       },
       {
         path: "/joined-event",
-        Component: JoinedEvent,
+        element: (
+          <PrivateRoute>
+            <JoinedEvent></JoinedEvent>
+          </PrivateRoute>
+        ),
       },
     ],
   },
