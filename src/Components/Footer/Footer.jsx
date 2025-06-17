@@ -38,7 +38,7 @@ const Footer = () => {
           <p className="flex">
             <img
               className="w-12 h-12"
-              src="/public/assets/logo_footer.png"
+              src="/assets/logo_footer.png"
               alt=""
             />
           </p>
