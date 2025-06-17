@@ -10,14 +10,14 @@ const GallerySection = () => {
         <div className="space-y-5">
           <div>
             <img
-              className="w-auto lg:w-72 h-[196px] rounded-xl"
+              className="w-[300px] mx-auto lg:w-72 h-[196px] rounded-xl"
               src="/assets/gallery-5.jpg"
               alt=""
             />
           </div>
           <div>
             <img
-              className="w-auto lg:w-72 h-96 rounded-xl"
+              className="w-[300px] mx-auto lg:w-72 h-96 rounded-xl"
               src="/assets/gallery-3.jpg"
               alt=""
             />
@@ -26,14 +26,14 @@ const GallerySection = () => {
         <div className="space-y-5">
           <div>
             <img
-              className="w-auto lg:w-72 h-96 rounded-xl"
+              className="w-[300px] mx-auto lg:w-72 h-96 rounded-xl"
               src="/assets/gallery-6.jpg"
               alt=""
             />
           </div>
           <div>
             <img
-              className="w-auto lg:w-72 h-[196px] rounded-xl"
+              className="w-[300px] mx-auto lg:w-72 h-[196px] rounded-xl"
               src="/assets/gallery-7.jpg"
               alt=""
             />
@@ -42,14 +42,14 @@ const GallerySection = () => {
         <div className="space-y-5">
           <div>
             <img
-              className="w-auto lg:w-72 h-[196px] rounded-xl"
+              className="w-[300px] mx-auto lg:w-72 h-[196px] rounded-xl"
               src="/assets/gallery-4.jpg"
               alt=""
             />
           </div>
           <div>
             <img
-              className="w-auto lg:w-72 h-96 rounded-xl"
+              className="w-[300px] mx-auto lg:w-72 h-96 rounded-xl"
               src="/assets/gallery-8.jpg"
               alt=""
             />
@@ -58,14 +58,14 @@ const GallerySection = () => {
         <div className="space-y-5">
           <div>
             <img
-              className="w-auto lg:w-72 h-96 rounded-xl"
+              className="w-[300px] mx-auto lg:w-72 h-96 rounded-xl"
               src="/assets/gallery-9.jpg"
               alt=""
             />
           </div>
           <div>
             <img
-              className="w-auto lg:w-72 h-[196px] rounded-xl"
+              className="w-[300px] mx-auto lg:w-72 h-[196px] rounded-xl"
               src="/assets/gallery-1.jpg"
               alt=""
             />
