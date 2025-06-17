@@ -6,7 +6,7 @@ const GallerySection = () => {
       <h1 className="text-5xl font-bold text-[#129ee7] text-center pb-7">
         Gallery
       </h1>
-      <div className="flex justify-center gap-5">
+      <div className="flex sm:flex-row flex-col justify-center gap-5">
         <div className="space-y-5">
           <div>
             <img
