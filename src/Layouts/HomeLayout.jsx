@@ -6,9 +6,15 @@ import Footer from "./../Components/Footer/Footer";
 const HomeLayout = () => {
   return (
     <div>
-      <NavBar></NavBar>
-      <Outlet></Outlet>
-      <Footer></Footer>
+      <navbar>
+        <NavBar></NavBar>
+      </navbar>
+      <main className="min-h-[calc(100vh-330px)]">
+        <Outlet></Outlet>
+      </main>
+      <footer>
+        <Footer></Footer>
+      </footer>
     </div>
   );
 };

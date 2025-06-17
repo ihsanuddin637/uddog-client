@@ -17,7 +17,7 @@ const UpcomingEventCard = ({ eventData }) => {
           <p>Date: {date}</p>
         </div>
         <div className="card-actions justify-center">
-          <Link to={`/event-details/${_id}`}><button className="btn btn-primary w-full">View Event</button></Link>
+          <Link className="w-full" to={`/event-details/${_id}`}><button className="btn btn-primary w-full">View Event</button></Link>
         </div>
       </div>
     </div>

@@ -1,10 +1,31 @@
-import React, { use } from "react";
+import React, { use, useEffect, useState } from "react";
 import { Link, NavLink, useNavigate } from "react-router";
 import { toast, ToastContainer } from "react-toastify";
 import { FcSportsMode } from "react-icons/fc";
 import { AuthContext } from "../../Context/AuthContext";
 
 const NavBar = () => {
+  const [theme, setTheme] = useState(
+    localStorage.getItem("theme") ? localStorage.getItem("theme") : "light"
+  );
+
+  // update state on toggle
+  const handleToggle = (e) => {
+    if (e.target.checked) {
+      setTheme("dark");
+    } else {
+      setTheme("light");
+    }
+  };
+
+  // set theme state in localstorage on mount & also update localstorage on state change
+  useEffect(() => {
+    localStorage.setItem("theme", theme);
+    const localTheme = localStorage.getItem("theme");
+    // add custom data-theme attribute to html tag required to update theme using DaisyUI
+    document.querySelector("html").setAttribute("data-theme", localTheme);
+  }, [theme]);
+
   const { user, logOut } = use(AuthContext);
   const navigate = useNavigate();
   const handleSignOut = () => {
@@ -87,7 +108,11 @@ const NavBar = () => {
         </div>
         <div className="flex items-center">
           <p className="hidden lg:flex">
-            <img className="w-12 h-12" src="/assets/icons8-initiative-60.png" alt="" />
+            <img
+              className="w-12 h-12"
+              src="/assets/icons8-initiative-60.png"
+              alt=""
+            />
           </p>
 
           <a className="text-base lg:text-4xl font-medium lg:font-extrabold">
@@ -101,7 +126,7 @@ const NavBar = () => {
       <div className="navbar-end pr-1.5">
         <label className="swap swap-rotate mr-4">
           {/* this hidden checkbox controls the state */}
-          <input type="checkbox" />
+          <input type="checkbox" onChange={handleToggle} />
 
           {/* sun icon */}
           <svg

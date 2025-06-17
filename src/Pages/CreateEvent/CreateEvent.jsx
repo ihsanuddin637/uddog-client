@@ -4,11 +4,13 @@ import { AuthContext } from "../../Context/AuthContext";
 import "react-datepicker/dist/react-datepicker.css";
 import DatePicker from "react-datepicker";
 import { useNavigate } from "react-router";
+import useAxiosSecure from "../Hooks/UseAxiosSecure";
 
 const CreateEvent = () => {
   const [startDate, setStartDate] = useState(new Date());
   <DatePicker selected={startDate} onChange={(date) => setStartDate(date)} />;
   const navigate = useNavigate();
+  const axiosSecure  = useAxiosSecure();
 
   const { user } = use(AuthContext);
   const handleCreateUsers = (e) => {
@@ -17,26 +19,18 @@ const CreateEvent = () => {
     const formData = new FormData(form);
     const groupData = Object.fromEntries(formData.entries());
     console.log(groupData);
-    fetch("http://localhost:3000/event-Data", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(groupData),
-    })
-      .then((response) => response.json())
-      .then((data) => {
-        console.log(data);
-        if (data.insertedId) {
-          Swal.fire({
-            title: "Successfully Group Created!",
-            icon: "success",
-            draggable: true,
-          });
-          form.reset();
-          navigate("/upcoming-event");
-        }
-      });
+    axiosSecure.post("event-Data", groupData).then((data) => {
+      console.log(data.data);
+      if (data.data.insertedId) {
+        Swal.fire({
+          title: "Successfully Event Created!",
+          icon: "success",
+          draggable: true,
+        });
+        form.reset();
+        navigate("/upcoming-event");
+      }
+    });
   };
   return (
     <div className="max-w-11/12 mx-auto my-16">
@@ -52,6 +46,7 @@ const CreateEvent = () => {
               className="input w-full outline-2 outline-green-400"
               name="groupName"
               placeholder="Event Title"
+              required
             />
           </fieldset>
           <fieldset className="fieldset bg-base-200 border-base-300 rounded-box border p-4">
@@ -60,6 +55,7 @@ const CreateEvent = () => {
               name="category"
               defaultValue="Pick a browser"
               className="select w-full outline-2 outline-green-400"
+              required
             >
               <option disabled={false}>Pick a Event Type</option>
               <option>Clean-up drives</option>
@@ -79,6 +75,7 @@ const CreateEvent = () => {
               className="input w-full outline-2 outline-green-400"
               name="Description"
               placeholder="Description"
+              required
             />
           </fieldset>
           <fieldset className="fieldset bg-base-200 border-base-300 rounded-box border p-4">
@@ -88,6 +85,7 @@ const CreateEvent = () => {
               className="input w-full outline-2 outline-green-400"
               name="location"
               placeholder="Location"
+              required
             />
           </fieldset>
           <fieldset className="fieldset bg-base-200 border-base-300 rounded-box border p-4">
@@ -97,6 +95,7 @@ const CreateEvent = () => {
               selected={startDate}
               name="date"
               onChange={(date) => setStartDate(date)}
+              required
             />
           </fieldset>
           <fieldset className="fieldset bg-base-200 border-base-300 rounded-box border p-4">
@@ -106,6 +105,7 @@ const CreateEvent = () => {
               className="input w-full outline-2 outline-green-400"
               name="photo"
               placeholder="Image Url"
+              required
             />
           </fieldset>
           <fieldset className="fieldset bg-base-200 border-base-300 rounded-box border p-4">
@@ -117,6 +117,7 @@ const CreateEvent = () => {
               placeholder="Name"
               defaultValue={user.displayName}
               readOnly
+              required
             />
           </fieldset>
           <fieldset className="fieldset bg-base-200 border-base-300 rounded-box border p-4">
@@ -128,6 +129,7 @@ const CreateEvent = () => {
               placeholder="Email"
               defaultValue={user.email}
               readOnly
+              required
             />
           </fieldset>
         </div>

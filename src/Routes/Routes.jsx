@@ -33,8 +33,6 @@ export const router = createBrowserRouter([
             <EventDetails></EventDetails>
           </PrivateRoute>
         ),
-        loader: ({ params }) =>
-          fetch(`http://localhost:3000/event-Data/${params.id}`),
       },
       {
         path: "/create-event",
@@ -59,6 +57,8 @@ export const router = createBrowserRouter([
             <UpdateEvent></UpdateEvent>
           </PrivateRoute>
         ),
+        loader: ({ params }) =>
+          fetch(`http://localhost:3000/event-Data/${params.id}`),
       },
       {
         path: "/joined-event",

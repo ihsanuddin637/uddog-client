@@ -3,12 +3,17 @@ import Swal from "sweetalert2";
 import { AuthContext } from "../../Context/AuthContext";
 import "react-datepicker/dist/react-datepicker.css";
 import DatePicker from "react-datepicker";
-import { useNavigate } from "react-router";
+import { useLoaderData, useNavigate, useParams } from "react-router";
+import useAxiosSecure from "../Hooks/UseAxiosSecure";
 
 const UpdateEvent = () => {
+  const { _id, groupName, Description, category, location, photo } =
+    useLoaderData();
   const [startDate, setStartDate] = useState(new Date());
   <DatePicker selected={startDate} onChange={(date) => setStartDate(date)} />;
   const navigate = useNavigate();
+  const axiosSecure = useAxiosSecure();
+  const { id } = useParams();
 
   const { user } = use(AuthContext);
   const handleCreateUsers = (e) => {
@@ -17,31 +22,23 @@ const UpdateEvent = () => {
     const formData = new FormData(form);
     const groupData = Object.fromEntries(formData.entries());
     console.log(groupData);
-    fetch("http://localhost:3000/event-Data", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(groupData),
-    })
-      .then((response) => response.json())
-      .then((data) => {
-        console.log(data);
-        if (data.insertedId) {
-          Swal.fire({
-            title: "Successfully Group Created!",
-            icon: "success",
-            draggable: true,
-          });
-          form.reset();
-          navigate("/upcoming-event");
-        }
-      });
+    axiosSecure.put(`event-Data/${_id}`).then((data) => {
+      console.log(data.data);
+      if (data.data.modifiedCount) {
+        Swal.fire({
+          title: "Successfully Event Updated!",
+          icon: "success",
+          draggable: true,
+        });
+        form.reset();
+        navigate("/manage-event");
+      }
+    });
   };
   return (
     <div className="max-w-11/12 mx-auto my-16">
       <h2 className="text-green-800 text-center pb-5 font-bold text-5xl">
-        Create Event
+        Update Event
       </h2>
       <form onSubmit={handleCreateUsers}>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
@@ -52,14 +49,17 @@ const UpdateEvent = () => {
               className="input w-full outline-2 outline-green-400"
               name="groupName"
               placeholder="Event Title"
+              defaultValue={groupName}
+              required
             />
           </fieldset>
           <fieldset className="fieldset bg-base-200 border-base-300 rounded-box border p-4">
             <label className="label">Event Type</label>
             <select
               name="category"
-              defaultValue="Pick a browser"
+              defaultValue={category}
               className="select w-full outline-2 outline-green-400"
+              required
             >
               <option disabled={false}>Pick a Event Type</option>
               <option>Clean-up drives</option>
@@ -79,6 +79,8 @@ const UpdateEvent = () => {
               className="input w-full outline-2 outline-green-400"
               name="Description"
               placeholder="Description"
+              defaultValue={Description}
+              required
             />
           </fieldset>
           <fieldset className="fieldset bg-base-200 border-base-300 rounded-box border p-4">
@@ -88,6 +90,8 @@ const UpdateEvent = () => {
               className="input w-full outline-2 outline-green-400"
               name="location"
               placeholder="Location"
+              defaultValue={location}
+              required
             />
           </fieldset>
           <fieldset className="fieldset bg-base-200 border-base-300 rounded-box border p-4">
@@ -97,6 +101,7 @@ const UpdateEvent = () => {
               selected={startDate}
               name="date"
               onChange={(date) => setStartDate(date)}
+              required
             />
           </fieldset>
           <fieldset className="fieldset bg-base-200 border-base-300 rounded-box border p-4">
@@ -106,6 +111,8 @@ const UpdateEvent = () => {
               className="input w-full outline-2 outline-green-400"
               name="photo"
               placeholder="Image Url"
+              defaultValue={photo}
+              required
             />
           </fieldset>
           <fieldset className="fieldset bg-base-200 border-base-300 rounded-box border p-4">
@@ -117,6 +124,7 @@ const UpdateEvent = () => {
               placeholder="Name"
               defaultValue={user.displayName}
               readOnly
+              required
             />
           </fieldset>
           <fieldset className="fieldset bg-base-200 border-base-300 rounded-box border p-4">
@@ -128,6 +136,7 @@ const UpdateEvent = () => {
               placeholder="Email"
               defaultValue={user.email}
               readOnly
+              required
             />
           </fieldset>
         </div>
@@ -135,7 +144,7 @@ const UpdateEvent = () => {
         <input
           type="submit"
           className="btn btn-primary w-full"
-          value="Create Event"
+          value="Update Event"
         />
       </form>
     </div>

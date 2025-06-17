@@ -1,6 +1,7 @@
 import React, { use, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router";
 import { AuthContext } from "../../Context/AuthContext";
+import Swal from "sweetalert2";
 
 const SignIn = () => {
   const { signInUser, signInWithGoogle } = use(AuthContext);
@@ -30,13 +31,24 @@ const SignIn = () => {
     signInWithGoogle()
       .then((result) => {
         console.log(result);
-        // fetch("https://hobby-connect-server.vercel.app/users/", {
+        // fetch("http://localhost:3000/users", {
         //   method: "POST",
         //   headers: {
         //     "Content-Type": "application/json",
         //   },
-        //   body: JSON.stringify(),
+        //   body: JSON.stringify(provider),
         // })
+        //   .then((response) => response.json())
+        //   .then((data) => {
+        //     console.log(data);
+        //     if (data.insertedId) {
+        //       Swal.fire({
+        //         title: "Account Created Successfully!",
+        //         icon: "success",
+        //         draggable: true,
+        //       });
+        //     }
+        //   });
         navigate(`${location.state ? location.state : "/"}`);
       })
       .catch((error) => {
