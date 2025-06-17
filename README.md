@@ -1,12 +1,33 @@
-# React + Vite
+# Hobby Connect
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+👉 **Live Demo**: [https://uddog.netlify.app/](https://uddog.netlify.app/)
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- ### 🎯 **Purpose**
 
-## Expanding the ESLint configuration
+  **Uddog** is a Social Development Events Platform designed a community-driven event management platform where users can create, join, and track social service events in their local area.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+
+- ### 🚀 **Key Features**
+
+  - 🌍 Global Showcase – Explore hobby groups from around the world.
+  - 📱 Mobile-Optimized – Seamless experience across all devices.
+  - 🎨 Tailwind UI – Consistent, clean design using Tailwind CSS.
+  - 🔔 Realistic UI – Includes avatars, notifications, and onboarding.
+  - ⚡ Lightning Speed – Fast load times with optimized performance.
+
+- ### 🧰 **Tech Stack & npm Packages**
+
+  - **Core Libraries**: `react`, `react-dom`, `react-router`
+  - **Backend & Server**: `firebase`, `express`, `mongodb`
+  - **Styling**: `tailwindcss`,
+  - **Enhancements**: `react-icons`, `react-helmet-async`, `react-toastify`, `sweetalert2`, `react-datepicker`,
+
+- ### 🌐 **Live URL**
+
+  Access the live project here:  
+  [https://uddog.netlify.app/](https://uddog.netlify.app/)
+
+- ### 🧱 **Scalability & Maintainability**
+  Designed with reusable components, modular structure, and clean code practices — making it easy to scale features and maintain the codebase over time.
