@@ -6,9 +6,9 @@ import Footer from "./../Components/Footer/Footer";
 const HomeLayout = () => {
   return (
     <div>
-      <navbar>
+      <nav>
         <NavBar></NavBar>
-      </navbar>
+      </nav>
       <main className="min-h-[calc(100vh-330px)]">
         <Outlet></Outlet>
       </main>
