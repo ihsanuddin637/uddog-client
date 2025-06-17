@@ -19,22 +19,20 @@ const ManageEventCard = ({ events, manageEvent, setManageEvent }) => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        axiosSecure
-          .delete(`event-Data/${_id}`)
-          .then((data) => {
-            console.log(data.data);
-            if (data.data.deletedCount) {
-              const remainingEvent = manageEvent.filter(
-                (event) => event._id !== _id
-              );
-              setManageEvent(remainingEvent);
-              Swal.fire({
-                title: "Deleted!",
-                text: "Your event has been deleted.",
-                icon: "success",
-              });
-            }
-          });
+        axiosSecure.delete(`event-Data/${_id}`).then((data) => {
+          console.log(data.data);
+          if (data.data.deletedCount) {
+            const remainingEvent = manageEvent.filter(
+              (event) => event._id !== _id
+            );
+            setManageEvent(remainingEvent);
+            Swal.fire({
+              title: "Deleted!",
+              text: "Your event has been deleted.",
+              icon: "success",
+            });
+          }
+        });
       }
     });
   };
@@ -42,20 +40,27 @@ const ManageEventCard = ({ events, manageEvent, setManageEvent }) => {
   return (
     <div className="card bg-base-100 shadow-sm">
       <figure>
-        <img src={photo} alt={groupName} />
+        <img className="w-48 h-48" src={photo} alt={groupName} />
       </figure>
       <div className="card-body">
         <h2 className="card-title">{groupName}</h2>
         <p>{category}</p>
         <div className="card-actions justify-end">
           <Link className="w-full" to={`/update-event/${_id}`}>
-            <button className="btn w-full btn-primary">Update</button>
+            <button className="relative w-full inline-block px-4 py-2 font-medium group">
+            <span className="absolute inset-0 w-full h-full transition duration-200 ease-out transform translate-x-1 translate-y-1 bg-[#129ee7] group-hover:-translate-x-0 group-hover:-translate-y-0"></span>
+            <span className="absolute inset-0 w-full h-full bg-white border-2 border-[#129ee7] group-hover:bg-[#129ee7]"></span>
+            <span className="relative text-black group-hover:text-white">
+              Update
+            </span>
+          </button>
           </Link>
-          <button
-            onClick={() => handleDelete(_id)}
-            className="btn w-full btn-primary"
-          >
-            Delete
+          <button onClick={() => handleDelete(_id)} className="relative w-full inline-block px-4 py-2 font-medium group">
+            <span className="absolute inset-0 w-full h-full transition duration-200 ease-out transform translate-x-1 translate-y-1 bg-[#129ee7] group-hover:-translate-x-0 group-hover:-translate-y-0"></span>
+            <span className="absolute inset-0 w-full h-full bg-white border-2 border-[#129ee7] group-hover:bg-[#129ee7]"></span>
+            <span className="relative text-black group-hover:text-white">
+              Delete
+            </span>
           </button>
         </div>
       </div>

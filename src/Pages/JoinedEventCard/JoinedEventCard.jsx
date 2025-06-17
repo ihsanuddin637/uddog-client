@@ -1,10 +1,10 @@
 import React from "react";
 
 const JoinedEventCard = ({ joinEvent }) => {
-  const { groupName, photo } = joinEvent;
+  const { groupName, photo, category } = joinEvent;
   return (
-    <div className="card bg-base-100 mx-auto shadow-sm">
-      <figure className="px-10 pt-10">
+    <div className="card bg-base-300 rounded-2xl mx-auto shadow-2xl">
+      <figure>
         <img
           src={photo}
           alt="Shoes"
@@ -12,14 +12,10 @@ const JoinedEventCard = ({ joinEvent }) => {
         />
       </figure>
       <div className="card-body items-center text-center">
-        <h2 className="card-title">Card Title</h2>
+        <h2 className="card-title">{groupName}</h2>
         <p>
-          A card component has a figure, a body part, and inside body there are
-          title and actions parts
+          {category}
         </p>
-        <div className="card-actions">
-          <button className="btn btn-primary">Buy Now</button>
-        </div>
       </div>
     </div>
   );

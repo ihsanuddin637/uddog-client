@@ -4,15 +4,15 @@ import { AuthContext } from "../../Context/AuthContext";
 import useAxiosSecure from "../Hooks/UseAxiosSecure";
 
 const JoinedEvent = () => {
-// fetch("http://localhost:3000/join-user")
- const { user } = useContext(AuthContext);
+  // fetch("http://localhost:3000/join-user")
+  const { user } = useContext(AuthContext);
   const axiosSecure = useAxiosSecure();
   const [joinedEvent, setJoinedEvent] = useState([]);
 
-useEffect(() => {
-  if (user?.email) {
+  useEffect(() => {
+    if (user?.email) {
       axiosSecure
-        .get('join-user')
+        .get("join-user")
         .then((response) => {
           setJoinedEvent(response.data || []);
           console.log(response);
@@ -21,13 +21,15 @@ useEffect(() => {
           console.error("Error fetching event data:", error);
           setJoinedEvent([]);
         });
-  }
-}, [user?.email, axiosSecure]);
+    }
+  }, [user?.email, axiosSecure]);
 
   return (
-    <div>
-      JoinedEvent
-      <div>
+    <div className="my-16">
+      <h2 className="text-[#129ee7] text-center pb-5 font-bold text-5xl">
+        Joined Event
+      </h2>
+      <div className="grid md:grid-cols-3 gap-5">
         {joinedEvent.map((joinEvent) => (
           <JoinedEventCard
             key={joinEvent._id}

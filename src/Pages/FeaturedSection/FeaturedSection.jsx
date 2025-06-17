@@ -2,48 +2,36 @@ import React from "react";
 
 const FeaturedSection = () => {
   return (
-    <div className="bg-base-300">
-        <h1 className="text-5xl font-bold text-black text-center pb-7">Gallery</h1>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 bg-white">
-        <div className="text-center border-2 border-red-400 p-5 space-y-2">
-          <h2>Join Upcoming Events</h2>
-          <p>
+    <div className="mt-16">
+      <h1 className="text-5xl font-bold text-[#129ee7] text-center pb-7">
+        Feature
+      </h1>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+        <div className="text-center rounded-2xl p-5 bg-base-300 space-y-2">
+          <h2 className="text-2xl font-semibold">Join Upcoming Events</h2>
+          <p className="text-base font-medium">
             Discover and participate in meaningful events that align with your
             passions.
           </p>
-          <p>
-            "Browse upcoming initiatives and be part of real change in your
-            community."
-          </p>
         </div>
-        <div>
-          <h2>Create Your Own Events</h2>
-          <p>
+        <div className="text-center rounded-2xl p-5 bg-base-300 space-y-2">
+          <h2 className="text-2xl font-semibold">Create Your Own Events</h2>
+          <p className="text-base font-medium">
             Easily host your own events to support social causes, raise
             awareness, or build local impact.
           </p>
-          <p>
-            "Bring your ideas to life and inspire others to join your mission."
-          </p>
         </div>
-        <div>
-          <h2>Manage Your Events</h2>
-          <p>
+        <div className="text-center rounded-2xl p-5 bg-base-300 space-y-2">
+          <h2 className="text-2xl font-semibold">Manage Your Events</h2>
+          <p className="text-base font-medium">
             Track attendance, edit details, and monitor progress—all from your
             personalized dashboard.
           </p>
-          <p>
-            "Stay in control with simple tools for organizing successful
-            events."
-          </p>
         </div>
-        <div>
-          <h2>Update or Delete Events</h2>
-          <p>
+        <div className="text-center rounded-2xl p-5 bg-base-300 space-y-2">
+          <h2 className="text-2xl font-semibold">Update or Delete Events</h2>
+          <p className="text-base font-medium">
             Need to make changes? Update event info or remove events anytime.
-          </p>
-          <p>
-            "Keep your events current and relevant with flexible editing tools."
           </p>
         </div>
       </div>

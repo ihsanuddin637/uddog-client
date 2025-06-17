@@ -32,7 +32,7 @@ const Footer = () => {
     </>
   );
   return (
-    <footer className="footer footer-horizontal footer-center bg-teal-900 text-primary-content p-10">
+    <footer className="footer footer-horizontal footer-center bg-[#129ee7] text-primary-content p-10">
       <aside>
         <div className="flex items-center">
           <p className="flex">
@@ -43,7 +43,7 @@ const Footer = () => {
             />
           </p>
 
-          <a className="text-base lg:text-4xl font-medium lg:font-extrabold">
+          <a className="text-base lg:text-4xl text-white font-medium lg:font-extrabold">
             UDDOG
           </a>
         </div>

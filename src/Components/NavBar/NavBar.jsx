@@ -42,7 +42,7 @@ const NavBar = () => {
     <>
       <NavLink
         className={({ isActive }) =>
-          isActive ? "border-b-2 font-extrabold" : ""
+          isActive ? "border-b-2 font-extrabold text-[#129ee7]" : ""
         }
         to="/"
       >
@@ -50,7 +50,7 @@ const NavBar = () => {
       </NavLink>
       <NavLink
         className={({ isActive }) =>
-          isActive ? "border-b-2 font-extrabold" : ""
+          isActive ? "border-b-2 font-extrabold text-[#129ee7]" : ""
         }
         to="/upcoming-event"
       >
@@ -58,7 +58,7 @@ const NavBar = () => {
       </NavLink>
       <NavLink
         className={({ isActive }) =>
-          isActive ? "border-b-2 font-extrabold" : ""
+          isActive ? "border-b-2 font-extrabold text-[#129ee7]" : ""
         }
         to="/contact"
       >
@@ -97,13 +97,13 @@ const NavBar = () => {
         <div className="flex items-center">
           <p className="hidden lg:flex">
             <img
-              className="w-12 h-12"
+              className="w-12 h-12 text-[#129ee7]"
               src="/assets/logo_header.png"
               alt=""
             />
           </p>
 
-          <a className="text-base lg:text-4xl font-medium lg:font-extrabold">
+          <a className="text-base lg:text-5xl text-[#129ee7] font-medium lg:font-extrabold">
             UDDOG
           </a>
         </div>
@@ -112,7 +112,7 @@ const NavBar = () => {
         <ul className="menu menu-horizontal px-1 gap-3">{links}</ul>
       </div>
       <div className="navbar-end pr-1.5">
-        <label className="swap swap-rotate mr-4">
+        <label className="swap swap-rotate mr-4 hover:text-[#129ee7]">
           {/* this hidden checkbox controls the state */}
           <input type="checkbox" onChange={handleToggle} />
 
@@ -138,7 +138,7 @@ const NavBar = () => {
           <div className="dropdown">
             <div tabIndex={0}>
               <img
-                className="rounded-full w-10 h-10"
+                className="rounded-full w-10 h-10 border-4 border-[#129ee7]"
                 src={user.photoURL}
                 alt=""
               />
@@ -147,26 +147,32 @@ const NavBar = () => {
               tabIndex={0}
               className="dropdown-content menu bg-base-100 rounded-box z-1 w-52 p-2 shadow-sm"
             >
-              <li>
+              <li className="hover:bg-[#129ee7] hover:text-white">
                 <a>{user.displayName}</a>
               </li>
-              <li>
+              <li className="hover:bg-[#129ee7] hover:text-white">
                 <Link to="/create-event">Create Event</Link>
               </li>
-              <li>
+              <li className="hover:bg-[#129ee7] hover:text-white">
                 <Link to="/manage-event">Manage Event</Link>
               </li>
-              <li>
+              <li className="hover:bg-[#129ee7] hover:text-white">
                 <Link to="/joined-event">Joined Event</Link>
               </li>
-              <li onClick={handleSignOut}>
+              <li className="hover:bg-[#129ee7] hover:text-white" onClick={handleSignOut}>
                 <Link>Sign Out</Link>
               </li>
             </ul>
           </div>
         ) : (
-          <Link to="/auth/signIn" className="btn btn-neutral">
-            Sign In
+          <Link to="/auth/signIn">
+            <button className="relative inline-block px-4 py-2 font-medium group">
+              <span className="absolute inset-0 w-full h-full transition duration-200 ease-out transform translate-x-1 translate-y-1 bg-[#129ee7] group-hover:-translate-x-0 group-hover:-translate-y-0"></span>
+              <span className="absolute inset-0 w-full h-full bg-white border-2 border-[#129ee7] group-hover:bg-[#129ee7]"></span>
+              <span className="relative text-black group-hover:text-white">
+                Sign In
+              </span>
+            </button>
           </Link>
         )}
       </div>

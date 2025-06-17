@@ -23,9 +23,9 @@ const Contact = () => {
   };
 
   return (
-    <div className="max-w-3xl mx-auto my-12 px-4">
-      <h2 className="text-3xl font-bold text-center text-green-700 mb-6">
-        Contact Us
+    <div className="max-w-3xl mx-auto my-12 [#129ee7] outline-[#129ee7] lg:px-4">
+      <h2 className="text-[#129ee7] text-center pb-5 font-bold text-5xl">
+        Contact Us!
       </h2>
       <form
         onSubmit={handleSubmit}
@@ -39,7 +39,7 @@ const Contact = () => {
             value={formData.name}
             onChange={handleChange}
             required
-            className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-green-400"
+            className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-[#129ee7] outline-[#129ee7]"
             placeholder="Your full name"
           />
         </div>
@@ -51,7 +51,7 @@ const Contact = () => {
             value={formData.email}
             onChange={handleChange}
             required
-            className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-green-400"
+            className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-[#129ee7] outline-[#129ee7]"
             placeholder="Your email address"
           />
         </div>
@@ -65,16 +65,17 @@ const Contact = () => {
             value={formData.message}
             onChange={handleChange}
             required
-            className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-green-400"
+            className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-[#129ee7] outline-[#129ee7]"
             placeholder="Write your message here..."
           ></textarea>
         </div>
-        <button
-          type="submit"
-          className="bg-green-600 text-white px-6 py-2 rounded hover:bg-green-700 transition-all"
-        >
-          Send Message
-        </button>
+        <button className="relative inline-block px-4 py-2 font-medium group">
+            <span className="absolute inset-0 w-full h-full transition duration-200 ease-out transform translate-x-1 translate-y-1 bg-[#129ee7] group-hover:-translate-x-0 group-hover:-translate-y-0"></span>
+            <span className="absolute inset-0 w-full h-full bg-white border-2 border-[#129ee7] group-hover:bg-[#129ee7]"></span>
+            <span className="relative text-black group-hover:text-white">
+              Send Message
+            </span>
+          </button>
       </form>
     </div>
   );

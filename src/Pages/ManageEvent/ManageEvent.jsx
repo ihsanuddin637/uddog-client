@@ -25,8 +25,10 @@ const ManageEvent = () => {
   }, [user?.email, axiosSecure]);
 
   return (
-    <div className="p-5">
-      <h1 className="text-3xl font-bold mb-4">Manage Event</h1>
+    <div className="p-5 my-16">
+      <h2 className="text-[#129ee7] text-center pb-5 font-bold text-5xl">
+        Manage Event
+      </h2>
       {manageEvent.length === 0 ? (
         <p className="text-gray-500">No Events Found</p>
       ) : (

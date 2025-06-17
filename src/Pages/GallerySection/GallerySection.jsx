@@ -2,8 +2,10 @@ import React from "react";
 
 const GallerySection = () => {
   return (
-    <div>
-      <h1 className="text-5xl font-bold text-black text-center pb-7">Gallery</h1>
+    <div className="shadow-2xl mt-16 rounded-2xl">
+      <h1 className="text-5xl font-bold text-[#129ee7] text-center pb-7">
+        Gallery
+      </h1>
       <div className="flex justify-center gap-5">
         <div className="space-y-5">
           <div>

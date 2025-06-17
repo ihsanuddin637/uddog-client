@@ -14,6 +14,7 @@ import PrivateRoute from "./PrivateRoutes";
 import EventDetails from "../Pages/EventDetails/EventDetails";
 import UpdateEvent from "../Pages/UpdateEvent/UpdateEvent";
 import Contact from "../Pages/Contact/Contact";
+import Loading from "../Pages/Loading/Loading";
 
 export const router = createBrowserRouter([
   {
@@ -59,11 +60,12 @@ export const router = createBrowserRouter([
         path: "/update-event/:id",
         element: (
           <PrivateRoute>
-            <UpdateEvent></UpdateEvent>
+            <UpdateEvent />
           </PrivateRoute>
         ),
         loader: ({ params }) =>
           fetch(`http://localhost:3000/event-Data/${params.id}`),
+        hydrateFallbackElement: <Loading></Loading>
       },
       {
         path: "/joined-event",
