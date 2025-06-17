@@ -98,7 +98,7 @@ const NavBar = () => {
           <p className="hidden lg:flex">
             <img
               className="w-12 h-12"
-              src="/assets/icons8-initiative-60.png"
+              src="/assets/logo_header.png"
               alt=""
             />
           </p>

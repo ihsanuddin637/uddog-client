@@ -1,21 +1,2 @@
-/* Import Tailwind's base styles */
-@import "tailwindcss/base.css";
-
-/* Define your custom theme settings */
-@theme {
-  --font-sans: ui-sans-serif, system-ui, sans-serif;
-  --font-serif: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
-  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-  --spacing: 0.25rem;
-  --border-radius: 0.375rem;
-  /* Add other custom properties as needed */
-}
-
-/* Import Tailwind's component styles */
-@import "tailwindcss/components.css";
-
-/* Import Tailwind's utility classes */
-@import "tailwindcss/utilities.css";
-
 @import "tailwindcss";
 @plugin "daisyui";

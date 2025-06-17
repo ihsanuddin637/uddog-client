@@ -32,13 +32,13 @@ const Footer = () => {
     </>
   );
   return (
-    <footer className="footer footer-horizontal footer-center bg-neutral text-primary-content p-10">
+    <footer className="footer footer-horizontal footer-center bg-teal-900 text-primary-content p-10">
       <aside>
         <div className="flex items-center">
           <p className="flex">
             <img
-              className="w-12 h-12 text-white bg-white"
-              src="/assets/icons8-initiative-60.png"
+              className="w-12 h-12"
+              src="/public/assets/logo_footer.png"
               alt=""
             />
           </p>

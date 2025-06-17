@@ -2,9 +2,9 @@ import React from "react";
 
 const FeaturedSection = () => {
   return (
-    <div>
+    <div className="bg-base-300">
         <h1 className="text-5xl font-bold text-black text-center pb-7">Gallery</h1>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 bg-white">
         <div className="text-center border-2 border-red-400 p-5 space-y-2">
           <h2>Join Upcoming Events</h2>
           <p>
