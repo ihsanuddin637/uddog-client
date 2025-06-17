@@ -56,26 +56,14 @@ const NavBar = () => {
       >
         <li>Upcoming Event</li>
       </NavLink>
-      {user && (
-        <>
-          <NavLink
-            className={({ isActive }) =>
-              isActive ? "border-b-2 font-extrabold" : ""
-            }
-            to="/createGroup"
-          >
-            <li>Create Group</li>
-          </NavLink>
-          <NavLink
-            className={({ isActive }) =>
-              isActive ? "border-b-2 font-extrabold" : ""
-            }
-            to="/myGroup"
-          >
-            <li>My Groups</li>
-          </NavLink>
-        </>
-      )}
+      <NavLink
+        className={({ isActive }) =>
+          isActive ? "border-b-2 font-extrabold" : ""
+        }
+        to="/contact"
+      >
+        <li>Contact Us</li>
+      </NavLink>
     </>
   );
   return (

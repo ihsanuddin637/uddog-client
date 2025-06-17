@@ -17,25 +17,17 @@ const Footer = () => {
         className={({ isActive }) =>
           isActive ? "border-b-2 font-extrabold" : ""
         }
-        to="/allGroup"
+        to="/upcoming-event"
       >
-        <li>All Groups</li>
+        <li>Upcoming Event</li>
       </NavLink>
       <NavLink
         className={({ isActive }) =>
           isActive ? "border-b-2 font-extrabold" : ""
         }
-        to="/createGroup"
+        to="/contact"
       >
-        <li>Create Group</li>
-      </NavLink>
-      <NavLink
-        className={({ isActive }) =>
-          isActive ? "border-b-2 font-extrabold" : ""
-        }
-        to="/myGroup"
-      >
-        <li>My Groups</li>
+        <li>Contact Us</li>
       </NavLink>
     </>
   );
@@ -43,8 +35,17 @@ const Footer = () => {
     <footer className="footer footer-horizontal footer-center bg-neutral text-primary-content p-10">
       <aside>
         <div className="flex items-center">
-          <FcSportsMode className="text-5xl" />
-          <a className="text-4xl font-extrabold">Hobby Connect</a>
+          <p className="flex">
+            <img
+              className="w-12 h-12 text-white bg-white"
+              src="/assets/icons8-initiative-60.png"
+              alt=""
+            />
+          </p>
+
+          <a className="text-base lg:text-4xl font-medium lg:font-extrabold">
+            UDDOG
+          </a>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1 gap-3">{links}</ul>

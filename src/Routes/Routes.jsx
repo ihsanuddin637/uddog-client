@@ -13,6 +13,7 @@ import JoinedEvent from "../Pages/JoinedEvent/JoinedEvent";
 import PrivateRoute from "./PrivateRoutes";
 import EventDetails from "../Pages/EventDetails/EventDetails";
 import UpdateEvent from "../Pages/UpdateEvent/UpdateEvent";
+import Contact from "../Pages/Contact/Contact";
 
 export const router = createBrowserRouter([
   {
@@ -25,6 +26,10 @@ export const router = createBrowserRouter([
         path: "/upcoming-event",
         Component: UpcomingEvent,
         loader: () => fetch("http://localhost:3000/event-Data/upcoming"),
+      },
+      {
+        path: "/contact",
+        Component: Contact,
       },
       {
         path: "/event-details/:id",
