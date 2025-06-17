@@ -145,7 +145,7 @@ const NavBar = () => {
             </div>
             <ul
               tabIndex={0}
-              className="dropdown-content menu bg-base-100 rounded-box z-1 w-52 p-2 shadow-sm"
+              className="dropdown-content menu -ml-24 bg-base-100 rounded-box z-1 w-52 p-2 shadow-sm"
             >
               <li className="hover:bg-[#129ee7] hover:text-white">
                 <a>{user.displayName}</a>
