@@ -27,7 +27,7 @@ const SignUp = () => {
       .then((result) => {
         console.log(result);
         Navigate("/");
-        fetch("http://localhost:3000/users", {
+        fetch("https://uddog-server.vercel.app/users", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",

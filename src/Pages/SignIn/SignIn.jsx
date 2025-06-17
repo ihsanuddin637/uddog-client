@@ -31,7 +31,7 @@ const SignIn = () => {
     signInWithGoogle()
       .then((result) => {
         console.log(result);
-        // fetch("http://localhost:3000/users", {
+        // fetch("https://uddog-server.vercel.app/users", {
         //   method: "POST",
         //   headers: {
         //     "Content-Type": "application/json",

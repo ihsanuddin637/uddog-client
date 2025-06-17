@@ -4,7 +4,7 @@ import { AuthContext } from "../../Context/AuthContext";
 import useAxiosSecure from "../Hooks/UseAxiosSecure";
 
 const JoinedEvent = () => {
-  // fetch("http://localhost:3000/join-user")
+  // fetch("https://uddog-server.vercel.app/join-user")
   const { user } = useContext(AuthContext);
   const axiosSecure = useAxiosSecure();
   const [joinedEvent, setJoinedEvent] = useState([]);

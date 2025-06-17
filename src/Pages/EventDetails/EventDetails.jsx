@@ -30,7 +30,7 @@ const EventDetails = () => {
     eventDetails;
 
   const handleJoinEvent = () => {
-    fetch("http://localhost:3000/join-user", {
+    fetch("https://uddog-server.vercel.app/join-user", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
