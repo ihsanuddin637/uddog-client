@@ -12,7 +12,7 @@ const GallerySection = () => {
             <img
               className="w-[300px] mx-auto lg:w-72 h-[196px] rounded-xl"
               src="/assets/gallery-5.jpg"
-              alt=""
+              alt="gallery5"
             />
           </div>
           <div>
