@@ -15,6 +15,7 @@ import EventDetails from "../Pages/EventDetails/EventDetails";
 import UpdateEvent from "../Pages/UpdateEvent/UpdateEvent";
 import Contact from "../Pages/Contact/Contact";
 import Loading from "../Pages/Loading/Loading";
+import About from "../Pages/About/About";
 
 export const router = createBrowserRouter([
   {
@@ -23,6 +24,10 @@ export const router = createBrowserRouter([
     errorElement: <Error></Error>,
     children: [
       { index: true, Component: Home },
+      {
+        path: "/about",
+        Component: About,
+      },
       {
         path: "/upcoming-event",
         Component: UpcomingEvent,

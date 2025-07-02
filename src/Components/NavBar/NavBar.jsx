@@ -52,6 +52,14 @@ const NavBar = () => {
         className={({ isActive }) =>
           isActive ? "border-b-2 font-extrabold text-[#129ee7]" : ""
         }
+        to="/about"
+      >
+        <li>About</li>
+      </NavLink>
+      <NavLink
+        className={({ isActive }) =>
+          isActive ? "border-b-2 font-extrabold text-[#129ee7]" : ""
+        }
         to="/upcoming-event"
       >
         <li>Upcoming Event</li>
@@ -67,7 +75,7 @@ const NavBar = () => {
     </>
   );
   return (
-    <div className="navbar bg-base-100 shadow-sm px-0 lg:px-12">
+    <div className="navbar bg-base-300 shadow-sm px-0 lg:px-12">
       <div className="navbar-start">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -159,7 +167,10 @@ const NavBar = () => {
               <li className="hover:bg-[#129ee7] hover:text-white">
                 <Link to="/joined-event">Joined Event</Link>
               </li>
-              <li className="hover:bg-[#129ee7] hover:text-white" onClick={handleSignOut}>
+              <li
+                className="hover:bg-[#129ee7] hover:text-white"
+                onClick={handleSignOut}
+              >
                 <Link>Sign Out</Link>
               </li>
             </ul>
