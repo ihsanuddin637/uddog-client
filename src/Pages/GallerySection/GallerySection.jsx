@@ -6,8 +6,8 @@ const GallerySection = () => {
       <h1 className="text-5xl font-bold text-[#129ee7] text-center pb-7">
         Gallery
       </h1>
-      <div className="flex sm:flex-row flex-col justify-center gap-5">
-        <div className="space-y-5">
+      <div className="flex sm:flex-row flex-col justify-center gap-7">
+        <div className="space-y-7">
           <div>
             <img
               className="w-[300px] mx-auto lg:w-72 h-[196px] rounded-xl"
@@ -23,7 +23,7 @@ const GallerySection = () => {
             />
           </div>
         </div>
-        <div className="space-y-5">
+        <div className="space-y-7">
           <div>
             <img
               className="w-[300px] mx-auto lg:w-72 h-96 rounded-xl"
@@ -39,7 +39,7 @@ const GallerySection = () => {
             />
           </div>
         </div>
-        <div className="space-y-5">
+        <div className="space-y-7">
           <div>
             <img
               className="w-[300px] mx-auto lg:w-72 h-[196px] rounded-xl"
@@ -55,7 +55,7 @@ const GallerySection = () => {
             />
           </div>
         </div>
-        <div className="space-y-5">
+        <div className="space-y-7">
           <div>
             <img
               className="w-[300px] mx-auto lg:w-72 h-96 rounded-xl"
