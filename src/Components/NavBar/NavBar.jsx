@@ -105,13 +105,13 @@ const NavBar = () => {
         <div className="flex items-center">
           <p className="hidden lg:flex">
             <img
-              className="w-12 h-12 text-[#129ee7]"
+              className="w-10 h-10 text-[#129ee7]"
               src="/assets/logo_header.png"
               alt=""
             />
           </p>
 
-          <a className="text-base lg:text-5xl text-[#129ee7] font-medium lg:font-extrabold">
+          <a className="text-base lg:text-4xl text-[#129ee7] font-medium lg:font-extrabold">
             UDDOG
           </a>
         </div>

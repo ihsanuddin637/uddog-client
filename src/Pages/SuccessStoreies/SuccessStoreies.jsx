@@ -28,14 +28,14 @@ const testimonials = [
 
 const TestimonialsSection = () => {
   return (
-    <section className="py-16 bg-gray-100" id="testimonials">
-      <div className="max-w-6xl mx-auto px-4">
+    <section className="py-16 bg-white" id="testimonials">
+      <div className="">
         <h1 className="text-5xl font-bold text-[#129ee7] text-center pb-7">What Our Community Says</h1>
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
           {testimonials.map((testimonial, index) => (
             <div
               key={index}
-              className="bg-white shadow-lg rounded-xl p-6 border border-gray-200"
+              className="bg-base-300 shadow-lg rounded-xl p-6 border border-gray-200"
             >
               <p className="text-gray-700 italic mb-4">
                 &ldquo;{testimonial.quote}&rdquo;
