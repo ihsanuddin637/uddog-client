@@ -30,8 +30,13 @@ export const router = createBrowserRouter([
       },
       {
         path: "/upcoming-event",
-        Component: UpcomingEvent,
-        loader: () => fetch("https://uddog-server.vercel.app/event-Data/upcoming"),
+        element: (
+          <PrivateRoute>
+            <UpcomingEvent></UpcomingEvent>
+          </PrivateRoute>
+        ),
+        loader: () =>
+          fetch("https://uddog-server.vercel.app/event-Data/upcoming"),
       },
       {
         path: "/contact",
@@ -70,7 +75,7 @@ export const router = createBrowserRouter([
         ),
         loader: ({ params }) =>
           fetch(`https://uddog-server.vercel.app/event-Data/${params.id}`),
-        hydrateFallbackElement: <Loading></Loading>
+        hydrateFallbackElement: <Loading></Loading>,
       },
       {
         path: "/joined-event",

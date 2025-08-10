@@ -12,7 +12,7 @@ const Banner = () => {
       <div className="hero-overlay rounded-2xl"></div>
       <div className="hero-content text-neutral-content text-center">
         <div className="max-w-10/12 space-y-3">
-          <h1 className="text-5xl text-white font-bold">
+          <h1 className="text-4xl lg:text-5xl text-white font-bold">
             Drive Social Change Through Community Events
           </h1>
           <p className="text 2xl text-white font-medium">

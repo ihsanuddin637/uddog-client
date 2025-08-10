@@ -29,7 +29,7 @@ const Contact = () => {
       </h2>
       <form
         onSubmit={handleSubmit}
-        className="bg-white shadow-md rounded-lg p-8 space-y-6"
+        className="shadow-md rounded-lg p-8 space-y-6"
       >
         <div>
           <label className="block text-gray-700 font-medium mb-2">Name</label>

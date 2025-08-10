@@ -2,8 +2,8 @@ import React from "react";
 
 const FeaturedSection = () => {
   return (
-    <div className="mt-16">
-      <h1 className="text-5xl font-bold text-[#129ee7] text-center pb-7">
+    <div className="mt-6 lg:mt-16">
+      <h1 className="text-4xl lg:text-5xl font-bold text-[#129ee7] text-center pb-7">
         Feature
       </h1>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">

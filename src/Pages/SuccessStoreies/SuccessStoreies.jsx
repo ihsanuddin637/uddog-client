@@ -28,16 +28,16 @@ const testimonials = [
 
 const TestimonialsSection = () => {
   return (
-    <section className="py-16 bg-white" id="testimonials">
+    <section className="py-6 lg:py-16" id="testimonials">
       <div className="">
-        <h1 className="text-5xl font-bold text-[#129ee7] text-center pb-7">What Our Community Says</h1>
+        <h1 className="text-4xl lg:text-5xl font-bold text-[#129ee7] text-center pb-7">What Our Community Says</h1>
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
           {testimonials.map((testimonial, index) => (
             <div
               key={index}
               className="bg-base-300 shadow-lg rounded-xl p-6 border border-gray-200"
             >
-              <p className="text-gray-700 italic mb-4">
+              <p className="italic mb-4">
                 &ldquo;{testimonial.quote}&rdquo;
               </p>
               <div className="flex items-center gap-4">
@@ -47,10 +47,10 @@ const TestimonialsSection = () => {
                   className="w-12 h-12 rounded-full border"
                 />
                 <div>
-                  <p className="font-semibold text-gray-800">
+                  <p className="font-semibold">
                     {testimonial.name}
                   </p>
-                  <p className="text-sm text-gray-500">
+                  <p className="text-sm">
                     {testimonial.role} – {testimonial.event}
                   </p>
                 </div>

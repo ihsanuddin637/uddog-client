@@ -2,8 +2,8 @@ import React from "react";
 
 const GallerySection = () => {
   return (
-    <div className="shadow-2xl mt-16 rounded-2xl">
-      <h1 className="text-5xl font-bold text-[#129ee7] text-center pb-7">
+    <div className="shadow-2xl mt-6 lg:mt-16 rounded-2xl">
+      <h1 className="text-4xl lg:text-5xl font-bold text-[#129ee7] text-center pb-7">
         Gallery
       </h1>
       <div className="flex sm:flex-row flex-col justify-center gap-7">

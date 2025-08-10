@@ -56,7 +56,9 @@ const NavBar = () => {
       >
         <li>About</li>
       </NavLink>
-      <NavLink
+      <>
+      {
+        user &&       <NavLink
         className={({ isActive }) =>
           isActive ? "border-b-2 font-extrabold text-[#129ee7]" : ""
         }
@@ -64,6 +66,8 @@ const NavBar = () => {
       >
         <li>Upcoming Event</li>
       </NavLink>
+      }
+      </>
       <NavLink
         className={({ isActive }) =>
           isActive ? "border-b-2 font-extrabold text-[#129ee7]" : ""

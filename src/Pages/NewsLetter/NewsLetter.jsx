@@ -2,19 +2,19 @@ import React from "react";
 
 const NewsLetter = () => {
   return (
-    <div className="flex items-center justify-center gap-10 shadow-xl rounded-2xl bg-base-300 p-10 my-12">
-      <div>
+    <div className="flex items-center justify-center gap-2 lg:gap-10 shadow-xl rounded-2xl bg-base-300 p-2 lg:p-10 my-6 lg:my-12">
+      <div className="hidden lg:flex">
         <img src="/assets/newsletter-icon.png" alt="" />
       </div>
       <div className="space-y-3">
-        <h1 className="text-5xl font-bold text-[#129ee7]">Subscribe to our Newsletter</h1>
+        <h1 className="text-4xl lg:text-5xl font-bold text-[#129ee7]">Subscribe to our Newsletter</h1>
         <h3 className="text-xl font-medium">
           Get the latest on upcoming events, volunteer drives, and community success stories.
         </h3>
         <form>
           <input
             placeholder="Enter Your E-mail Address"
-            className="outline-0 h-10 w-2/3 p-4 border-2 border-[#129ee7]"
+            className="outline-0 h-10 w-full lg:w-2/3 p-4 border-2 border-[#129ee7]"
             type="text"
           />
           <button className="relative inline-block px-4 py-2 font-medium group">

@@ -4,7 +4,7 @@ const About = () => {
   return (
     <section className="py-16 px-4 bg-white text-gray-800">
       <div className="max-w-6xl mx-auto">
-        <h1 className="text-4xl md:text-5xl font-bold text-center mb-6">
+        <h1 className="text-[#129ee7] text-center pb-5 font-bold text-5xl">
           About Uddog
         </h1>
         <p className="text-center max-w-3xl mx-auto text-lg text-gray-600 mb-12">
