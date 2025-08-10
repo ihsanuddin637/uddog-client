@@ -128,7 +128,7 @@ const SignIn = () => {
             </form>
             <button>
               Do You have an Account?
-              <Link to="/auth/signUp">Register</Link>
+              <Link to="/auth/signUp" className="text-blue-300">Register</Link>
             </button>
           </div>
         </div>
