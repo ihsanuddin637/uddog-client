@@ -62,7 +62,7 @@ const SignIn = () => {
         <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
           <div className="card-body">
             <div className="text-center lg:text-left">
-              <h1 className="text-5xl font-bold">Login now!</h1>
+              <h1 className="text-4xl font-bold">Login now!</h1>
             </div>
             <form onSubmit={handleSignIn} className="fieldset">
               <label className="label">Email</label>
